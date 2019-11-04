@@ -3,7 +3,7 @@
 import pandas as pd
 import populartimes
 
-API_KEY = 'AIzaSyAt9G7bpQr158qWnPnR_z1H9qNPlSuOrpI'
+API_KEY = 'API_KEY_HERE'
 
 places = pd.read_csv('places1.csv', index_col=0)
 places['monday'] = None
