@@ -5,7 +5,7 @@ import pandas as pd
 
 
 PEKANBARU_CENTER = (0.507068,101.447777)
-API_KEY = 'AIzaSyAt9G7bpQr158qWnPnR_z1H9qNPlSuOrpI'
+API_KEY = 'API_KEY_HERE'
 API_NEARBY_SEARCH_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
 RADIUS = 50000
 #PLACES_TYPES = [('airport', 1), ('bank', 2)] ## TESTING
