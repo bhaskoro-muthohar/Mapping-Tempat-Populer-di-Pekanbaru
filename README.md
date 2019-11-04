@@ -1,12 +1,8 @@
 # Mapping-Tempat-Populer-di-Pekanbaru
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kT34FJMQgJ3fC6rA7ve9oemYvAvYuKKi)
 
-I created a interactive map (using pandas, python and folium libraries) on collected data from two resources of [Google Places API][places-api]. The resources are search nearby places and get popular times for those places. In short: more than 300 places were collected using 30km radius range, 20 categories and some max results limitations chosen by hand. These raw data of places is the `places.csv` dataset (it contains `place_name`, `place_id`, `lat`, `lng` and `type` columns).
+Saya membuat peta interaktif (menggunakan pandas, python dan library folium) untuk mengoleksi data dari [Google Places API](https://developers.google.com/places/web-service/intro). Kemudian, lebih dari 400 tempat berhasil dikumpulkan dalam radius 30km dan dikelompokan kedalam 20 kategori. Raw data dari tempat tersebut terdapat dalam `places1.csv` dataset (`place_name`, `place_name`, `place_id`, `lat`, `lng` dan `type`).
 
-The `read_places.py` script was used to read those `places.csv`'s places from the API. To do this, you only need a API Key ([see here how to get one][api-key]). This script uses the [Search][api-search] of the API.
+Untuk mendapatkan dataset `places1.csv` menggunakan skript `read_places.py`. Sebelum menggunakan skript tersebut dibutuhkan [API key] [https://cloud.google.com/docs/authentication/api-keys]. Setelah itu kita akan menempatkan tempat yang di `places1.csv` dengan "moments" menggunakan `get_places_popular_moments.py` dan akan mmenghasilkan dataset baru `places_with_moments.csv`.
 
-Then you will need to populate these places with popular times or "moments" using another resource from Google Places. This resource is not available through regulas Places API and also is not free, but you make 5.000 calls with the allotted monthly budget. For this reason I'm not sharing the obtained dataset of places with popular times, it may go against the use terms of the services. So, I created the `get_places_popular_moments.py` to make these calls and generate a new dataset `data/places_with_moments.csv`.
-
-Now we have a bunch of places with the popular moments, just like we wanted. But, you will realise, that not every place has any values for popular moments (maybe neither Google has). This means that for our study, these places without "popular moments" data can be ignored, on that example from 800 only 300 has valid values. To use only the data we want let's clean up our dataset by running the `clear_places.py`. It will generate the final peace `places_cleaned.py`.
-
-Ok! that's it. Now you can plot it all using the `creating_map_time.ipynb` notebook. Enjoy.
+Setelah mendapatkan tempat dengan "moments" dibutuhkan tahap cleaning data karena tidak semua tempat punya nilai "moments". Untuk membersihkan data digunakan skript `clear_places.py`. Skript akan menghasilkan dataset terakhir yang kita butuhkan `places_cleaned.csv`. Ok! Setelah itu dataset akan diproses langsung menggunakan Notebook `creating_map_time.ipynb`.
